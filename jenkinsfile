@@ -8,6 +8,7 @@ node {
    stage('Instance Creation on AWS'){
    sh label: 'terraform', script: '/bin/terraform  init'
    sh label: 'terraform', script: '/bin/terraform  apply -input=false -auto-approve'
+   sh label: 'copy', script: 'cp -rf jenkins-ci.ini ../../'
    }
   }
  }
